@@ -10,7 +10,7 @@
       <h1><a href="/">Django Girls Blog</a></h1>
     </header>
 
-    <article>
+    <!-- <article>
       <time>published: 28.04.2025, 12:14</time>
       <h2><a href="">My first post</a></h2>
       <p>
@@ -19,9 +19,9 @@
         dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
         fermentum massa justo sit amet risus.
       </p>
-    </article>
+    </article> -->
 
-    <article>
+    <!-- <article>
       <time>published: 28.04.2025, 12:14</time>
       <h2><a href="">My second post</a></h2>
       <p>
@@ -29,6 +29,16 @@
         vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce
         dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.
       </p>
+    </article> -->
+
+    <!-- {{ posts }} -->
+    <!-- {% for post in posts %} {{ post }} {% endfor %} -->
+    {% for post in posts %}
+    <article>
+      <time>published: {{ post.published_date }}</time>
+      <h2><a href="">{{ post.title }}</a></h2>
+      <p>{{ post.text|linebreaksbr }}</p>
     </article>
+    {% endfor %}
   </body>
 </html>
